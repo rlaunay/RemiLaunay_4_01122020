@@ -14,7 +14,6 @@ body {
 	margin: 0;
 	display: flex;
 	flex-direction: column;
-	/* background-image: url('background.png'); */
 	font-family: var(--font-default);
 	font-size: 18px;
 	max-width: 1300px;
@@ -26,9 +25,9 @@ p {
 	padding: 0.5vw;
 }
 
-img {
+/* img {
 	padding-right: 1rem;
-}
+} */
 
 .topnav {
 	overflow: hidden;
@@ -68,7 +67,10 @@ img {
 	display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
+	.topnav {
+		overflow: visible;
+	}
 	.topnav a {
 		display: none;
 	}
@@ -76,32 +78,34 @@ img {
 		float: right;
 		display: block;
 	}
-}
 
-@media screen and (max-width: 768px) {
 	.topnav.responsive {
 		position: relative;
 	}
-	.topnav.responsive .icon {
+
+	.topnav.responsive .main-navbar {
 		position: absolute;
+		top: 55px;
 		right: 0;
-		top: 0;
+		border: 1px solid black;
+		border-radius: 15px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		background-color: white;
+		z-index: 1000;
 	}
 	.topnav.responsive a {
-		float: none;
 		display: block;
-		text-align: left;
 	}
 }
 
 @media screen and (max-width: 540px) {
-	.topnav a {
-		display: none;
+	.header-logo {
+		margin: 10px;
 	}
-	.topnav a.icon {
-		float: right;
-		display: block;
-		margin-top: -15px;
+	.header-logo img {
+		height: 30px;
 	}
 }
 
@@ -411,7 +415,7 @@ input {
 	font-size: 16px;
 }
 .hero-section {
-	min-height: 93vh;
+	/* min-height: 93vh; */
 	border-radius: 10px;
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
@@ -426,7 +430,6 @@ input {
 	color: #fff;
 	position: relative;
 	text-align: left;
-	min-width: 424px;
 }
 .hero-content::after {
 	content: '';
@@ -445,12 +448,14 @@ input {
 	font-size: 6rem;
 	font-weight: normal;
 	white-space: nowrap;
+	display: block;
 }
 .hero-text {
-	width: 146%;
 	font-weight: normal;
 	margin-top: 57px;
 	padding: 0;
+	width: 146%;
+	display: block;
 }
 .btn-signup {
 	outline: none;
@@ -484,7 +489,7 @@ footer {
 	padding-right: 2vw;
 	margin: 0 20px;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
 	.hero-section {
 		display: block;
 		box-shadow: unset;
@@ -503,10 +508,11 @@ footer {
 	.hero-headline {
 		font-size: 4.5rem;
 		white-space: normal;
+		width: 100%;
 	}
 	.hero-text {
-		width: unset;
 		font-size: 1.5rem;
+		width: 100%;
 	}
 	.hero-img img {
 		border-radius: 10px;
@@ -521,6 +527,38 @@ footer {
 		margin-top: 50px;
 		text-align: center;
 	}
+}
+
+.confirmation-modal {
+	display: none;
+}
+
+.confirmation-modal.open-modal {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	height: 850px;
+}
+
+.confirmation-modal.open-modal h1 {
+	margin: auto 0;
+	font-weight: normal;
+}
+
+.confirmation-modal.open-modal button {
+	margin-bottom: 20px;
+	padding: 10px 40px;
+	border: none;
+	border-radius: 5px;
+	background-color: #fe142f;
+	color: #fff;
+	outline: none;
+	cursor: pointer;
+}
+
+.modal-body.close-modal {
+	display: none;
 }
 
 @keyframes modalopen {
