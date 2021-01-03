@@ -26,7 +26,10 @@ function launchModal() {
 	modalbg.style.display = 'block';
 }
 
-// close modal form
+/**
+ *
+ * @param {Event} event
+ */
 function closeModal(event) {
 	if (
 		modalbg !== event.target &&
