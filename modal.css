@@ -57,10 +57,18 @@ p {
 	border-radius: 15px;
 }
 
+.topnav a:hover span {
+	border-bottom: 1px solid #fff;
+}
+
 .topnav a.active {
 	background-color: #ff0000;
 	color: #ffffff;
 	border-radius: 15px;
+}
+
+.topnav a.active span {
+	border-bottom: 1px solid #fff;
 }
 
 .topnav .icon {
@@ -526,6 +534,15 @@ footer {
 	.copyrights {
 		margin-top: 50px;
 		text-align: center;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.hero-headline {
+		font-size: 48px;
+	}
+	.hero-text {
+		font-size: 13px;
 	}
 }
 
